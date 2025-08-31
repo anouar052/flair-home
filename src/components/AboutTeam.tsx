@@ -107,7 +107,7 @@ export default function AboutTeam({ team }: AboutTeamProps) {
                   </div>
                   
                   <div className="team-content absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                    <div className={`backdrop-blur-sm rounded-lg p-6 ${isDark ? 'bg-black/40' : 'bg-white/40'} border ${isDark ? 'border-white/10' : 'border-black/10'}`}>
+                    <div className={`backdrop-blur-xs rounded-lg p-6 ${isDark ? 'bg-black/40' : 'bg-white/40'} border ${isDark ? 'border-white/10' : 'border-black/10'}`}>
                       <h3 className="text-xl md:text-2xl font-light mb-2">{member.name}</h3>
                       <p className={`text-sm font-medium uppercase tracking-wider mb-3 ${isDark ? 'text-white/60' : 'text-black/60'}`}>
                         {member.role}

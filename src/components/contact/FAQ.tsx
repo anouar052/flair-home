@@ -66,7 +66,7 @@ export default function FAQ() {
               >
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                  className="w-full text-left p-6 focus:outline-none"
+                  className="w-full text-left p-6 focus:outline-hidden"
                 >
                   <div className="flex items-center justify-between">
                     <h3 className="text-lg font-medium pr-4">{item.question}</h3>

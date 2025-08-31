@@ -49,7 +49,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
     <>
       <div
         className={clsx(
-          "fixed inset-0 z-[60] transition-opacity",
+          "fixed inset-0 z-60 transition-opacity",
           isDark ? "bg-black/50" : "bg-black/40",
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
         )}
@@ -57,7 +57,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
       />
       <aside
         className={clsx(
-          "fixed right-0 top-0 z-[60] h-full w-full max-w-md border-l transition-transform duration-300",
+          "fixed right-0 top-0 z-60 h-full w-full max-w-md border-l transition-transform duration-300",
           isDark ? "bg-neutral-950 text-white border-white/10" : "bg-white text-black border-black/10",
           open ? "translate-x-0" : "translate-x-full",
         )}
@@ -98,7 +98,7 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                 <div className="space-y-4">
                   {items.map((item) => (
                     <div key={`${item.id}-${JSON.stringify(item.variants)}`} className="relative flex gap-3 p-3 rounded-lg border border-neutral-200/20">
-                      <div className="relative w-20 h-20 flex-shrink-0">
+                      <div className="relative w-20 h-20 shrink-0">
                         <SafeImage
                           src={item.image}
                           alt={item.title}

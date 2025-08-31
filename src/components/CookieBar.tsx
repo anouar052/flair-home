@@ -42,7 +42,7 @@ export default function CookieBar() {
           <Button
             as="button"
             variant="ghost"
-            className={isDark ? "!text-white !bg-transparent hover:!bg-white/10" : "!text-black !bg-transparent hover:!bg-black/10"}
+            className={isDark ? "text-white! bg-transparent! hover:bg-white/10!" : "text-black! bg-transparent! hover:bg-black/10!"}
             onClick={() => closeWithStatus("preferences")}
           >
             Preferences
@@ -50,7 +50,7 @@ export default function CookieBar() {
           <Button
             as="button"
             variant="ghost"
-            className={isDark ? "!text-white !bg-transparent hover:!bg-white/10" : "!text-black !bg-transparent hover:!bg-black/10"}
+            className={isDark ? "text-white! bg-transparent! hover:bg-white/10!" : "text-black! bg-transparent! hover:bg-black/10!"}
             onClick={() => closeWithStatus("denied")}
           >
             Deny
@@ -58,7 +58,7 @@ export default function CookieBar() {
           <Button
             as="button"
             variant="white"
-            className={isDark ? "!bg-white !text-black hover:!bg-neutral-200" : "!bg-black !text-white hover:!bg-black/90"}
+            className={isDark ? "bg-white! text-black! hover:bg-neutral-200!" : "bg-black! text-white! hover:bg-black/90!"}
             onClick={() => closeWithStatus("accepted")}
           >
             Accept

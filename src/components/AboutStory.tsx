@@ -524,7 +524,7 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
                 data-year={item.year}
                 data-index={index}
               >
-                <div className={`space-y-6 p-6 ml-8 rounded-2xl backdrop-blur-sm ${isDark ? 'bg-black/60' : 'bg-black/40'} border border-white/10`}>
+                <div className={`space-y-6 p-6 ml-8 rounded-2xl backdrop-blur-xs ${isDark ? 'bg-black/60' : 'bg-black/40'} border border-white/10`}>
                   <div className="timeline-year-group space-y-2">
                     <div className="timeline-year text-sm font-medium tracking-wider uppercase text-white/70">
                       {item.year}

@@ -18,7 +18,7 @@ function ProductCard({ p }: { p: Product }) {
   const { isDark } = useTheme();
   return (
     <Link href={`/product/${p.id}`} className="group block">
-      <div className={`${isDark ? "bg-neutral-900" : "bg-neutral-200"} relative aspect-[3/4] w-full overflow-hidden rounded-xl`}>
+      <div className={`${isDark ? "bg-neutral-900" : "bg-neutral-200"} relative aspect-3/4 w-full overflow-hidden rounded-xl`}>
         <SafeImage src={p.img} alt={p.title} className="object-cover transition-opacity duration-500 opacity-100 group-hover:opacity-0" fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" />
         <SafeImage src={p.imgHover} alt={`${p.title} hover`} className="object-cover transition-opacity duration-500 opacity-0 group-hover:opacity-100" fill sizes="(min-width: 1024px) 25vw, (min-width: 768px) 33vw, 50vw" />
       </div>

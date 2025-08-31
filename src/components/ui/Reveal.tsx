@@ -19,7 +19,7 @@ export function Reveal({
     <div
       ref={ref}
       className={clsx(
-        "transition-all duration-[900ms] ease-out will-change-transform",
+        "transition-all duration-900 ease-out will-change-transform",
         className,
       )}
       style={{

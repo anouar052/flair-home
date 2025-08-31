@@ -23,7 +23,7 @@ export default function ContactMap() {
       </div>
 
       {/* Overlay with contact info */}
-      <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-sm rounded-xl p-6 max-w-sm shadow-lg">
+      <div className="absolute top-6 left-6 bg-white/95 backdrop-blur-xs rounded-xl p-6 max-w-sm shadow-lg">
         <h3 className="font-medium text-gray-900 mb-2">Copenhagen Headquarters</h3>
         <p className="text-sm text-gray-600 mb-3">123 Design District<br />2100 Copenhagen, Denmark</p>
         <Button

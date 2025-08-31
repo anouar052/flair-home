@@ -107,7 +107,7 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
           {/* Product Images */}
           <div className="space-y-6">
             <Reveal>
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
+              <div className="relative aspect-4/5 w-full overflow-hidden rounded-2xl">
                 <SafeImage
                   src={selectedImage === 0 ? product.images.main : product.images.gallery[selectedImage - 1]}
                   alt={product.title}
@@ -374,21 +374,21 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="flex items-start space-x-3">
-                    <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${isDark ? "bg-white/40" : "bg-black/40"}`} />
+                    <div className={`w-2 h-2 rounded-full mt-2 shrink-0 ${isDark ? "bg-white/40" : "bg-black/40"}`} />
                     <div>
                       <div className="text-sm font-medium">Free Shipping</div>
                       <div className={`text-xs ${isDark ? "text-white/60" : "text-black/60"}`}>2–5 day delivery in EU</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${isDark ? "bg-white/40" : "bg-black/40"}`} />
+                    <div className={`w-2 h-2 rounded-full mt-2 shrink-0 ${isDark ? "bg-white/40" : "bg-black/40"}`} />
                     <div>
                       <div className="text-sm font-medium">Easy Returns</div>
                       <div className={`text-xs ${isDark ? "text-white/60" : "text-black/60"}`}>30-day returns, 100-night trial</div>
                     </div>
                   </div>
                   <div className="flex items-start space-x-3">
-                    <div className={`w-2 h-2 rounded-full mt-2 flex-shrink-0 ${isDark ? "bg-white/40" : "bg-black/40"}`} />
+                    <div className={`w-2 h-2 rounded-full mt-2 shrink-0 ${isDark ? "bg-white/40" : "bg-black/40"}`} />
                     <div>
                       <div className="text-sm font-medium">Warranty</div>
                       <div className={`text-xs ${isDark ? "text-white/60" : "text-black/60"}`}>5–10 year coverage</div>
@@ -509,7 +509,7 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
                     {product.features.map((feature, index) => (
                       <div key={index} className={`p-4 rounded-lg ${isDark ? "bg-neutral-900/50" : "bg-neutral-100/50"}`}>
                         <div className="flex items-start space-x-3">
-                          <div className="w-1.5 h-1.5 rounded-full bg-white mt-2 flex-shrink-0" />
+                          <div className="w-1.5 h-1.5 rounded-full bg-white mt-2 shrink-0" />
                           <span className={`${isDark ? "text-white/70" : "text-black/70"}`}>{feature}</span>
                         </div>
                       </div>
@@ -544,7 +544,7 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
             {product.relatedProducts.map((relatedProduct, index) => (
               <Reveal key={relatedProduct.id} delay={index * 100}>
                 <a href={relatedProduct.href} className="group block">
-                  <div className={`${isDark ? "bg-neutral-900" : "bg-neutral-200"} relative aspect-[3/4] w-full overflow-hidden rounded-xl`}>
+                  <div className={`${isDark ? "bg-neutral-900" : "bg-neutral-200"} relative aspect-3/4 w-full overflow-hidden rounded-xl`}>
                     <SafeImage
                       src={relatedProduct.img}
                       alt={relatedProduct.title}

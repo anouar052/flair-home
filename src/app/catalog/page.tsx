@@ -144,7 +144,7 @@ export default function CatalogPage() {
     return (
       <Link href={`/product/${p.id}`} className="group block relative">
         <div className={clsx(
-          "relative aspect-[3/4] w-full overflow-hidden rounded-xl",
+          "relative aspect-3/4 w-full overflow-hidden rounded-xl",
           isDark ? "bg-neutral-900" : "bg-neutral-200",
         )}>
           <SafeImage
@@ -233,7 +233,7 @@ export default function CatalogPage() {
                             key={c}
                             onClick={() => toggleSetValue(setSelectedCategories, c)}
                             className={clsx(
-                              "px-3 py-1.5 rounded-full text-sm border transition-all focus:outline-none focus:ring-2 hover:scale-105",
+                              "px-3 py-1.5 rounded-full text-sm border transition-all focus:outline-hidden focus:ring-2 hover:scale-105",
                               selectedCategories.has(c)
                                 ? (isDark ? "border-white bg-white text-black ring-white/30" : "border-black bg-black text-white ring-black/20")
                                 : isDark
@@ -261,7 +261,7 @@ export default function CatalogPage() {
                             key={t}
                             onClick={() => toggleSetValue(setSelectedTags, t)}
                             className={clsx(
-                              "px-3 py-1.5 rounded-full text-sm border transition-all focus:outline-none focus:ring-2 hover:scale-105",
+                              "px-3 py-1.5 rounded-full text-sm border transition-all focus:outline-hidden focus:ring-2 hover:scale-105",
                               selectedTags.has(t)
                                 ? (isDark ? "border-white bg-white text-black ring-white/30" : "border-black bg-black text-white ring-black/20")
                                 : isDark

@@ -52,7 +52,7 @@ export default function ContactInfo() {
           <div className="space-y-6">
             {CONTACT_INFO.map((info, index) => (
               <div key={index} className={`contact-card p-6 rounded-xl ${isDark ? 'bg-white/5 border border-white/10' : 'bg-black/5 border border-black/10'} flex items-start space-x-4`}>
-                <div className="text-2xl flex-shrink-0 mt-1">{info.icon}</div>
+                <div className="text-2xl shrink-0 mt-1">{info.icon}</div>
                 <div className="flex-1">
                   <h3 className="text-lg md:text-xl font-light mb-1">{info.title}</h3>
                   <p className={`text-sm mb-3 ${isDark ? 'text-white/60' : 'text-black/60'}`}>{info.content}</p>

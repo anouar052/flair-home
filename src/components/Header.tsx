@@ -210,8 +210,8 @@ export default function Header() {
           "fixed inset-x-0 top-0 z-50 transition-all",
           scrolled
             ? isDark
-              ? "backdrop-blur bg-black/50  "
-              : "backdrop-blur bg-white/90  "
+              ? "backdrop-blur-sm bg-black/50  "
+              : "backdrop-blur-sm bg-white/90  "
             : "bg-transparent",
         )}
       >

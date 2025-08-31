@@ -32,7 +32,7 @@ function Slider({
       min={min}
       max={max}
       className={cn(
-        "relative flex w-full touch-none items-center select-none data-[disabled]:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
+        "relative flex w-full touch-none items-center select-none data-disabled:opacity-50 data-[orientation=vertical]:h-full data-[orientation=vertical]:min-h-44 data-[orientation=vertical]:w-auto data-[orientation=vertical]:flex-col",
         className
       )}
       {...props}
@@ -57,7 +57,7 @@ function Slider({
           data-slot="slider-thumb"
           key={index}
           className={cn(
-            "block size-5 shrink-0 rounded-full border-2 shadow-lg transition-all hover:scale-110 focus:outline-none focus:ring-2 disabled:pointer-events-none disabled:opacity-50",
+            "block size-5 shrink-0 rounded-full border-2 shadow-lg transition-all hover:scale-110 focus:outline-hidden focus:ring-2 disabled:pointer-events-none disabled:opacity-50",
             isDark 
               ? "border-white bg-white hover:ring-white/30 focus:ring-white/30" 
               : "border-black bg-white hover:ring-black/30 focus:ring-black/30"

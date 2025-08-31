@@ -79,7 +79,7 @@ export default function AboutValues({ values }: AboutValuesProps) {
 
         <div className="space-y-20 md:space-y-32">
           {values.map((value, index) => (
-            <div key={value.title} className={`value-card ${index % 2 === 0 ? 'md:grid md:grid-cols-[auto,1fr] md:gap-20' : 'md:grid md:grid-cols-[1fr,auto] md:gap-20'} space-y-8 md:space-y-0 items-start`}>
+            <div key={value.title} className={`value-card ${index % 2 === 0 ? 'md:grid md:grid-cols-[auto_1fr] md:gap-20' : 'md:grid md:grid-cols-[1fr_auto] md:gap-20'} space-y-8 md:space-y-0 items-start`}>
               <div className={`${index % 2 === 1 ? 'md:order-2' : ''}`}>
                 <div className={clsx(
                   "text-6xl md:text-8xl font-light leading-none",
