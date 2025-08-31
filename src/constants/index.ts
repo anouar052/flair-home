@@ -68,6 +68,5 @@ export const NAVIGATION_ITEMS = [
   { href: ROUTES.HOME, label: "Home" },
   { href: ROUTES.CATALOG, label: "Catalog" },
   { href: ROUTES.ABOUT, label: "About" },
-  { href: ROUTES.JOURNAL, label: "Journal" },
   { href: ROUTES.CONTACT, label: "Contact" },
 ] as const;

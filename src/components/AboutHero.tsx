@@ -11,8 +11,6 @@ if (typeof window !== "undefined") {
 }
 
 export default function AboutHero() {
-  const { isDark } = useTheme();
-
   React.useEffect(() => {
     const ctx = gsap.context(() => {
       const heroTimeline = gsap.timeline();
@@ -48,15 +46,15 @@ export default function AboutHero() {
     <section className="relative min-h-screen w-full overflow-hidden">
       <div className="parallax-bg absolute inset-0">
         <SafeImage
-          src="https://images.unsplash.com/photo-1618220179428-22790b461013?q=80&auto=format&fit=crop&w=1920&h=1080"
-          alt="Modern furniture workspace"
+          src="https://images.unsplash.com/photo-1676250747209-eee2d728da64?q=80&auto=format&fit=crop&w=1920&h=1080"
+          alt="Woodworking craftsmanship studio"
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-100"
           sizes="100vw"
           priority
         />
       </div>
-      <div className={`absolute inset-0 ${isDark ? 'bg-black/40' : 'bg-black/50'}`} />
+      <div className={`absolute inset-0 bg-black/60`} />
       
       <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-6 h-screen flex flex-col justify-end pb-16">
         <div className="hero-text space-y-6">

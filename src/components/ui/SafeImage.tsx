@@ -14,6 +14,7 @@ type SafeImageProps = {
   fill?: boolean;
   width?: number;
   height?: number;
+  quality?: number;
 };
 
 const DEFAULT_FALLBACK =
@@ -30,6 +31,7 @@ export function SafeImage({
   fill,
   width,
   height,
+  quality = 90,
 }: SafeImageProps) {
   const [currentSrc, setCurrentSrc] = React.useState(src);
   React.useEffect(() => {
@@ -52,12 +54,12 @@ export function SafeImage({
 
   if (fill) {
     return (
-      <Image src={currentSrc} fill {...commonProps} />
+      <Image src={currentSrc} quality={quality} fill {...commonProps} />
     );
   }
 
   return (
-    <Image src={currentSrc} width={width ?? 1200} height={height ?? 800} {...commonProps} />
+    <Image src={currentSrc} quality={quality} width={width ?? 1200} height={height ?? 800} {...commonProps} />
   );
 }
 

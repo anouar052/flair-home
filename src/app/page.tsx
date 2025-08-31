@@ -1,7 +1,6 @@
 "use client";
 
-import React, { useEffect, useMemo } from "react";
-import { initScrollSmoother } from "@/lib/scrollSmoother";
+import React, { useMemo } from "react";
 import Hero from "@/components/Hero";
 import SplitStatement from "@/components/SplitStatement";
 import ProductsSection from "@/components/ProductsSection";
@@ -101,9 +100,5 @@ function PageContent() {
 }
 
 export default function HomePage() {
-  useEffect(() => {
-    initScrollSmoother();
-  }, []);
-  
   return <PageContent />;
 }

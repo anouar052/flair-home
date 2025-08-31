@@ -14,7 +14,7 @@ function usePreferLight() {
   const pathname = usePathname();
   
   return useMemo(() => {
-    const isHomePage = pathname === ROUTES.HOME || pathname === "/en";
+    const isHomePage = pathname === ROUTES.HOME || pathname === ROUTES.ABOUT;
     return !isDark && !isHomePage;
   }, [isDark, pathname]);
 }
@@ -129,9 +129,8 @@ function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
   const navItems = [
     { href: "/", label: "Home" },
     { href: "/catalog", label: "Catalog" },
-    { href: "/en/about", label: "About" },
-    { href: "/en/journal", label: "Journal" },
-    { href: "/en/contact", label: "Contact" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
   ];
 
   return (
@@ -186,14 +185,6 @@ function MobileMenu({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
           
           {/* Footer */}
           <div className={`p-6 border-t ${preferLight ? 'border-black/10' : isDark ? 'border-white/10' : 'border-black/10'}`}>
-            <div className="flex items-center justify-between mb-4">
-              <Link href="#" className={`text-sm ${preferLight ? 'text-black/70 hover:text-black' : isDark ? 'text-white/70 hover:text-white' : 'text-black/70 hover:text-black'}`}>
-                En
-              </Link>
-              <Link href="#" className={`text-sm ${preferLight ? 'text-black/70 hover:text-black' : isDark ? 'text-white/70 hover:text-white' : 'text-black/70 hover:text-black'}`}>
-                EUR €
-              </Link>
-            </div>
             <ThemeToggle />
           </div>
         </div>

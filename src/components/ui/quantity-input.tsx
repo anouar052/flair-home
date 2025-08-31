@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useTheme } from "./theme";
 
 interface QuantityInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   quantity: number;
@@ -16,6 +17,8 @@ const QuantityInput = React.forwardRef<HTMLInputElement, QuantityInputProps>(
       }
     };
 
+    const { isDark } = useTheme();
+
     return (
       <div className="flex items-center space-x-2">
         <button
@@ -30,7 +33,7 @@ const QuantityInput = React.forwardRef<HTMLInputElement, QuantityInputProps>(
           type="number"
           value={String(quantity)}
           onChange={handleInputChange}
-          className="w-16 text-center border rounded-md"
+          className={`w-16 text-center border rounded-md ${isDark ? 'bg-black' : 'bg-white'}`}
           ref={ref}
           {...props}
         />

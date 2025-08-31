@@ -112,6 +112,23 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
         // Set up mobile image stacking
         setupImageStacking(elements.stickyImages);
         
+        // Set up GSAP pin for the mobile timeline image container
+        const mobileImageContainer = storyRef.current?.querySelector('.md\\:hidden .sticky-image-container') as HTMLElement;
+        const mobileTextContainer = storyRef.current?.querySelector('.md\\:hidden .timeline-text-container') as HTMLElement;
+        
+        if (mobileImageContainer && mobileTextContainer) {
+          ScrollTrigger.create({
+            trigger: mobileTextContainer,
+            pin: mobileImageContainer,
+            pinSpacing: true,
+            start: "top top",
+            end: "bottom bottom",
+            id: "timeline-mobile-pin",
+            pinType: "transform", // Use transform instead of position: fixed
+            anticipatePin: 3 // Anticipate pin changes to reduce jitter
+          });
+        }
+        
         // Initialize mobile animations
         setupMobileImageTriggers(elements);
         setupTimelineProgress(elements, true);
@@ -125,6 +142,23 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
         
         // Set up desktop image stacking
         setupImageStacking(elements.stickyImages);
+        
+        // Set up GSAP pin for the timeline image container
+        const rightColumn = storyRef.current?.querySelector('.hidden.md\\:block .md\\:relative') as HTMLElement;
+        const leftColumn = storyRef.current?.querySelector('.hidden.md\\:block .timeline-text-container') as HTMLElement;
+        
+        if (rightColumn && leftColumn) {
+          ScrollTrigger.create({
+            trigger: leftColumn,
+            pin: rightColumn,
+            pinSpacing: true,
+            start: "top top",
+            end: "bottom bottom",
+            id: "timeline-desktop-pin",
+            pinType: "transform", // Use transform instead of position: fixed
+            anticipatePin: 3 // Anticipate pin changes to reduce jitter
+          });
+        }
         
         // Position dots first, then setup triggers
         positionDesktopDots(elements, () => {
@@ -185,7 +219,7 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
               if (yearText) {
                 const yearRect = yearText.getBoundingClientRect();
                 const contentRect = elements.contentContainer.getBoundingClientRect();
-                const relativeTop = yearRect.top - contentRect.top + (yearText.offsetHeight / 2) - 20;
+                const relativeTop = yearRect.top - contentRect.top + (yearText.offsetHeight / 2) + 10;
                 gsap.set(dot, { top: `${relativeTop}px` });
               }
             }
@@ -419,7 +453,7 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
     <section id="story" ref={storyRef} className={`relative ${isDark ? "bg-black text-white" : "bg-white text-black"}`}>
       {/* Mobile Full-Screen Sticky Background */}
       <div className="md:hidden absolute inset-0 z-0 min-h-screen">
-        <div className="sticky-image-container sticky top-0 w-full h-screen overflow-hidden">
+        <div className="sticky-image-container relative w-full h-screen overflow-hidden">
           {timeline.map((item, index) => (
             <div
               key={`mobile-image-${item.year}`}
@@ -437,9 +471,10 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
                 src={item.image}
                 alt={item.title}
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="100vw"
                 priority={index === 0}
+                quality={90}
               />
               <div className={`absolute inset-0 ${isDark ? 'bg-black/40' : 'bg-black/50'}`} />
               
@@ -477,7 +512,7 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
                   key={`mobile-dot-${index}`}
                   className="timeline-dot absolute w-2 h-2 rounded-full left-1/2 -translate-x-1/2 transition-all duration-300 bg-white/30 border border-white/50"
                   data-index={index}
-                  style={{ top: `${(index * 100) / (timeline.length - 1)}%` }}
+                  style={{ top: `${((index * 100) / (timeline.length - 1)) + 10}%` }}
                 />
               ))}
             </div>
@@ -506,11 +541,19 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
                   </p>
 
                   <div className="timeline-details pt-4">
-                    <div className="text-sm text-white/60">
-                      {index === 0 && "The foundation of everything we've built started with a simple belief in beautiful, functional design."}
-                      {index === 1 && "Our first collection represented months of research, prototyping, and a commitment to sustainable materials."}
-                      {index === 2 && "Expanding across Europe meant staying true to our values while reaching more homes and communities."}
-                      {index === 3 && "Innovation drives us forward as we explore new materials, smart features, and tomorrow's living spaces."}
+                    <div className="text-sm text-white/60 leading-relaxed">
+                      {index === 0 && (
+                        <p>Founded with a passion for beautiful, functional design. We started small, crafting each piece by hand with sustainable materials and unwavering attention to detail.</p>
+                      )}
+                      {index === 1 && (
+                        <p>Launched our first collection featuring clean Scandinavian lines and eco-conscious materials. The response validated our commitment to timeless, sustainable design.</p>
+                      )}
+                      {index === 2 && (
+                        <p>Expanded across Europe, opening curated showrooms that reflect both local culture and our core design philosophy while maintaining our commitment to quality.</p>
+                      )}
+                      {index === 3 && (
+                        <p>Pioneering smart furniture solutions and sustainable materials for tomorrow's living spaces. Innovation meets tradition in our forward-thinking approach.</p>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -533,7 +576,7 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
                   <div className={`header-line-3 ${isDark ? "text-white/70" : "text-black/70"}`}>to reality</div>
                 </div>
               </div>
-              <div className="timeline-content space-y-64 md:space-y-80 relative">
+              <div className="timeline-content space-y-64 md:space-y-80 relative pb-32">
                 <div className="absolute -left-7 top-0 bottom-0 w-px">
                   <div className={`timeline-line-bg w-full h-full ${isDark ? 'bg-white/10' : 'bg-black/10'}`} />
                   <div className={`timeline-line-progress absolute top-0 left-0 w-full ${isDark ? 'bg-white/30' : 'bg-black/30'}`} style={{ height: '0%' }} />
@@ -573,11 +616,19 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
                       </p>
 
                       <div className="timeline-details space-y-4 pt-8">
-                        <div className={`text-sm ${isDark ? 'text-white/50' : 'text-black/50'}`}>
-                          {index === 0 && "The foundation of everything we've built started with a simple belief in beautiful, functional design."}
-                          {index === 1 && "Our first collection represented months of research, prototyping, and a commitment to sustainable materials."}
-                          {index === 2 && "Expanding across Europe meant staying true to our values while reaching more homes and communities."}
-                          {index === 3 && "Innovation drives us forward as we explore new materials, smart features, and tomorrow's living spaces."}
+                        <div className={`text-sm ${isDark ? 'text-white/50' : 'text-black/50'} leading-relaxed`}>
+                          {index === 0 && (
+                            <p>Founded with a passion for beautiful, functional design. We started small, crafting each piece by hand with sustainable materials and unwavering attention to detail.</p>
+                          )}
+                          {index === 1 && (
+                            <p>Launched our first collection featuring clean Scandinavian lines and eco-conscious materials. The response validated our commitment to timeless, sustainable design.</p>
+                          )}
+                          {index === 2 && (
+                            <p>Expanded across Europe, opening curated showrooms that reflect both local culture and our core design philosophy while maintaining our commitment to quality.</p>
+                          )}
+                          {index === 3 && (
+                            <p>Pioneering smart furniture solutions and sustainable materials for tomorrow's living spaces. Innovation meets tradition in our forward-thinking approach.</p>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -586,7 +637,7 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
               </div>
             </div>
 
-            <div className="md:sticky md:top-0 h-screen">
+            <div className="md:relative h-screen">
               <div className="sticky-image-container relative w-full h-full overflow-hidden">
                 {timeline.map((item, index) => (
                   <div
@@ -605,10 +656,11 @@ export default function AboutStory({ timeline }: AboutStoryProps) {
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="object-cover"
+                      className="object-cover object-center"
                       sizes="(max-width: 1024px) 50vw, 33vw"
                       priority={index === 0}
-                    />
+                      quality={100}
+                      />
                     <div className={`absolute inset-0 ${isDark ? 'bg-black/20' : 'bg-white/10'}`} />
                     
                     <div className="absolute bottom-8 right-8">

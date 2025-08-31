@@ -258,7 +258,9 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
                             className={clsx(
                               "px-4 py-2 rounded-full text-sm border transition-all duration-200",
                               selectedVariants[variant.name] === option
-                                ? "border-white bg-white text-black"
+                                ? isDark
+                                  ? "border-white bg-white text-black"
+                                  : "border-black bg-black text-white"
                                 : isDark
                                 ? "border-white/20 text-white/80 hover:border-white/40 hover:text-white"
                                 : "border-black/20 text-black/80 hover:border-black/40 hover:text-black"
@@ -322,12 +324,15 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
 
             {/* Action Buttons */}
             <Reveal delay={300}>
-              <div className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <Button
                   as="button"
                   onClick={handleAddToCart}
                   variant="white"
-                  className="w-full py-4 text-base flex items-center justify-center font-medium text-center"
+                  className={clsx(
+                    "w-full py-4 text-base flex items-center justify-center font-medium text-center",
+                    !isDark && "bg-black text-white hover:bg-neutral-800"
+                  )}
                 >
                   Add to Cart
                 </Button>
@@ -335,7 +340,12 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
                   as="button"
                   onClick={handleBuyNow}
                   variant="ghost"
-                  className="w-full py-4 text-base font-medium border border-white/20 hover:bg-white/10 flex items-center justify-center"
+                  className={clsx(
+                    "w-full py-4 text-base font-medium flex items-center justify-center",
+                    isDark 
+                      ? "border border-white/20 hover:bg-white/10 text-white" 
+                      : "border border-black/20 hover:bg-black/10 text-black"
+                  )}
                 >
                   Buy Now
                 </Button>

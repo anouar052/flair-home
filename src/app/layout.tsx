@@ -7,6 +7,7 @@ import { CartProvider } from "@/components/ui/cart";
 import CartRoot from "@/components/CartRoot";
 import CookieBar from "@/components/CookieBar";
 import ErrorBoundary from "@/components/ErrorBoundary";
+import ScrollSmootherProvider from "@/components/ScrollSmootherProvider";
 
 export const metadata: Metadata = {
   title: "Flair Home — Furniture & Office",
@@ -23,6 +24,7 @@ export default function RootLayout({
         <ErrorBoundary>
           <ThemeProvider>
             <CartProvider>
+              <ScrollSmootherProvider />
               <Header />
               <CartRoot />
               <div id="smooth-wrapper">
