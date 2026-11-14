@@ -286,7 +286,7 @@ export default function ContactForm() {
                   type="submit"
                   disabled={isSubmitting}
                   variant={isDark ? "white" : "ghost"}
-                  className="px-8 py-3"
+                  className={`px-8 py-3 ${isDark ? "" : "bg-black! text-white! hover:bg-neutral-800!"}`}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
