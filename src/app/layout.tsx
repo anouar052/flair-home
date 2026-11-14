@@ -1,5 +1,4 @@
 import "./globals.css";
-import Script from "next/script";
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import { ThemeProvider } from "@/components/ui/theme";
@@ -19,8 +18,8 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" data-oid="tqwejzi">
-      <body className="antialiased" data-oid="m1fwsto" suppressHydrationWarning>
+    <html lang="en">
+      <body className="antialiased" suppressHydrationWarning>
         <ErrorBoundary>
           <ThemeProvider>
             <CartProvider>
@@ -30,12 +29,6 @@ export default function RootLayout({
               <div id="smooth-wrapper">
                 <div id="smooth-content">
                   {children}
-                  <Script
-                    type="module"
-                    strategy="afterInteractive"
-                    src="https://cdn.jsdelivr.net/gh/onlook-dev/onlook@main/apps/web/client/public/onlook-preload-script.js"
-                    data-oid="sidiesg"
-                  />
                 </div>
               </div>
               <CookieBar />
