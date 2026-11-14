@@ -16,7 +16,7 @@ export default function TrustBar() {
     {
       title: "Easy Returns",
       body:
-        "To make a return send an email to: customer@leflairstudios.com with your order number and reason for return. We'll respond with the next steps.",
+        "To make a return send an email to: support@flairhome.com with your order number and reason for return. We'll respond with the next steps.",
     },
     {
       title: "Easy Payment",
