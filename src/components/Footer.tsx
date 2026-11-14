@@ -32,17 +32,14 @@ export default function Footer() {
         </div>
         <div className="space-y-3">
           <div className="font-semibold">Support</div>
-          <Link href="#" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Shipping and Delivery</Link>
-          <Link href="#" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Payment Methods</Link>
-          <Link href="#" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Returns and Refunds</Link>
-          <Link href="#" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Terms of Service</Link>
-          <Link href="#" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Privacy Policy</Link>
+          <Link href="/contact" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Shipping and Delivery</Link>
+          <Link href="/contact" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Payment Methods</Link>
+          <Link href="/contact" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Returns and Refunds</Link>
         </div>
         <div className="space-y-3">
           <div className="font-semibold">Company</div>
-          <Link href="/en/about" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>About</Link>
-          <Link href="/en/journal" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Journal</Link>
-          <Link href="/en/contact" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Contact</Link>
+          <Link href="/about" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>About</Link>
+          <Link href="/contact" className={isDark ? "block text-white/70 hover:text-white" : "block text-black/70 hover:text-black"}>Contact</Link>
         </div>
         
       </div>

@@ -80,7 +80,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                 <span>Subtotal</span>
                 <span>€ 0.00</span>
               </div>
-              <Button href="/checkout" variant="white" className="mt-2 justify-center">Checkout</Button>
               <p className={isDark ? "text-sm text-white/60" : "text-sm text-black/60"}>
                 Your shopping bag is empty. <Link href="/catalog" className="underline">Shop</Link> new arrivals
               </p>
@@ -90,7 +89,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
             // Cart with items
             <>
               <div className="flex-1 overflow-y-auto px-5 py-4">
-                {/* Quick checkout button for easy access */}
                           
                 <div className="space-y-4">
                   {items.map((item) => (
@@ -150,7 +148,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                   <span>Subtotal</span>
                   <span>{formatPrice(subtotal)}</span>
                 </div>
-                <Button href="/checkout" variant="white" className="w-full justify-center py-3 text-base font-medium">Proceed to Checkout</Button>
               </div>
             </>
           )}
