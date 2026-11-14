@@ -5,6 +5,7 @@ import { clsx } from "./ui/clsx";
 import { useTheme } from "./ui/theme";
 import { useCart } from "./ui/cart";
 import { useEffect } from "react";
+import { formatPrice } from "@/lib/utils";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SafeImage } from "./ui/SafeImage";
 import { Input } from "./ui/input";
@@ -40,10 +41,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
       try { smoother?.paused?.(false); } catch {}
     };
   }, [open]);
-
-  const formatPrice = (price: number) => {
-    return `€ ${price.toFixed(2)} EUR`;
-  };
 
   return (
     <>
