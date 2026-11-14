@@ -23,6 +23,7 @@ interface RegularButtonProps extends BaseButtonProps {
   as: "button";
   href?: never;
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset";
 }
 
 type ButtonProps = LinkButtonProps | RegularButtonProps;
@@ -57,7 +58,7 @@ export function Button({
     const buttonProps = props as RegularButtonProps;
     return (
       <button 
-        type="button" 
+        type={buttonProps.type ?? "button"}
         onClick={buttonProps.onClick} 
         className={combinedClassName}
         disabled={disabled}
