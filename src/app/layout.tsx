@@ -14,11 +14,20 @@ export const metadata: Metadata = {
     "Home furniture, office furniture, and mattresses. Modern design, built for comfort.",
 };
 
+// Runs before first paint. Records the visitor's theme on <html>; light-mode visitors get the
+// page held back until the theme provider has applied their theme, so the dark server markup
+// is never shown to them. The timeout releases the page if scripts fail to load.
+const themeBootScript = `(function(){try{var t=localStorage.getItem('flair-theme');var d=t?t==='dark':window.matchMedia('(prefers-color-scheme: dark)').matches;var r=document.documentElement;r.dataset.theme=d?'dark':'light';r.style.colorScheme=d?'dark':'light';if(!d){r.setAttribute('data-theme-pending','');setTimeout(function(){r.removeAttribute('data-theme-pending')},4000)}}catch(e){}})();`;
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <style dangerouslySetInnerHTML={{ __html: "html[data-theme-pending]{visibility:hidden}" }} />
+        <script dangerouslySetInnerHTML={{ __html: themeBootScript }} />
+      </head>
       <body className="antialiased" suppressHydrationWarning>
         <ErrorBoundary>
           <ThemeProvider>

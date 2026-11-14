@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState, useEffect, useCallback } from "react";
+import React, { createContext, useContext, useState, useLayoutEffect, useCallback } from "react";
 import { STORAGE_KEYS, DEFAULT_VALUES } from "@/constants";
 
 interface ThemeContextType {
@@ -10,14 +10,11 @@ interface ThemeContextType {
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-function getInitialTheme(): boolean {
-  if (typeof window === 'undefined') return DEFAULT_VALUES.THEME === 'dark';
-  
+// What the visitor prefers: the saved choice first, then the system setting.
+function readPreferredTheme(): boolean {
   try {
     const stored = localStorage.getItem(STORAGE_KEYS.THEME);
     if (stored) return stored === 'dark';
-    
-    // Check system preference
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   } catch (error) {
     console.warn('Failed to read theme preference:', error);
@@ -25,34 +22,54 @@ function getInitialTheme(): boolean {
   }
 }
 
+function applyThemeToDocument(dark: boolean) {
+  const root = document.documentElement;
+  root.dataset.theme = dark ? 'dark' : 'light';
+  root.style.colorScheme = dark ? 'dark' : 'light';
+}
+
+function saveTheme(dark: boolean) {
+  try {
+    localStorage.setItem(STORAGE_KEYS.THEME, dark ? 'dark' : 'light');
+  } catch (error) {
+    console.warn('Failed to save theme preference:', error);
+  }
+}
+
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [isDark, setIsDark] = useState<boolean>(() => getInitialTheme());
-  
-  // Load theme from localStorage after mount to prevent hydration mismatch
-  useEffect(() => {
-    const stored = getInitialTheme();
-    setIsDark(stored);
+  // The server always renders the default theme, so the first client render must use it too.
+  // The real preference is applied before the first paint (layout effect below), and the
+  // inline script in the layout keeps the page hidden until then for light-mode visitors.
+  const [isDark, setIsDark] = useState<boolean>(DEFAULT_VALUES.THEME === 'dark');
+  const [resolved, setResolved] = useState(false);
+
+  useLayoutEffect(() => {
+    const preferred = readPreferredTheme();
+    setIsDark(preferred);
+    applyThemeToDocument(preferred);
+    setResolved(true);
   }, []);
-  
-  // Save theme preference
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      try {
-        localStorage.setItem(STORAGE_KEYS.THEME, isDark ? 'dark' : 'light');
-      } catch (error) {
-        console.warn('Failed to save theme preference:', error);
-      }
-    }
-  }, [isDark]);
-  
-  const toggleTheme = useCallback(() => {
-    setIsDark(prev => !prev);
-  }, []);
-  
+
+  useLayoutEffect(() => {
+    if (resolved) document.documentElement.removeAttribute('data-theme-pending');
+  }, [resolved]);
+
   const setTheme = useCallback((theme: 'light' | 'dark') => {
-    setIsDark(theme === 'dark');
+    const dark = theme === 'dark';
+    setIsDark(dark);
+    applyThemeToDocument(dark);
+    saveTheme(dark);
   }, []);
-  
+
+  const toggleTheme = useCallback(() => {
+    setIsDark((prev) => {
+      const next = !prev;
+      applyThemeToDocument(next);
+      saveTheme(next);
+      return next;
+    });
+  }, []);
+
   const value = React.useMemo(
     () => ({ isDark, toggleTheme, setTheme }),
     [isDark, toggleTheme, setTheme]
