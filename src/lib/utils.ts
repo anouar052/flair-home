@@ -14,7 +14,7 @@ export function cn(...inputs: ClassValue[]) {
  */
 export function formatPrice(price: string | number): string {
   if (typeof price === 'number') {
-    return `€ ${price.toLocaleString()} EUR`;
+    return `€ ${price.toLocaleString('en-US')} EUR`;
   }
   return price;
 }
@@ -23,8 +23,9 @@ export function formatPrice(price: string | number): string {
  * Parses a price string to a number for calculations
  */
 export function parsePriceToNumber(price: string): number {
-  const cleaned = price.replace(/[^\d.,]/g, '').replace(',', '.');
-  const parsed = parseFloat(cleaned);
+  // Prices are written like "€ 1,490 EUR": commas group thousands, the dot is the decimal point.
+  const match = price.match(/\d[\d,]*(?:\.\d+)?/);
+  const parsed = match ? parseFloat(match[0].replace(/,/g, '')) : NaN;
   return isNaN(parsed) ? 0 : parsed;
 }
 

@@ -5,6 +5,7 @@ import { clsx } from "./ui/clsx";
 import { useTheme } from "./ui/theme";
 import { useCart } from "./ui/cart";
 import { useEffect } from "react";
+import { formatPrice } from "@/lib/utils";
 import { ScrollSmoother } from "gsap/ScrollSmoother";
 import { SafeImage } from "./ui/SafeImage";
 import { Input } from "./ui/input";
@@ -40,10 +41,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
       try { smoother?.paused?.(false); } catch {}
     };
   }, [open]);
-
-  const formatPrice = (price: number) => {
-    return `€ ${price.toFixed(2)} EUR`;
-  };
 
   return (
     <>
@@ -83,7 +80,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                 <span>Subtotal</span>
                 <span>€ 0.00</span>
               </div>
-              <Button href="/checkout" variant="white" className="mt-2 justify-center">Checkout</Button>
               <p className={isDark ? "text-sm text-white/60" : "text-sm text-black/60"}>
                 Your shopping bag is empty. <Link href="/catalog" className="underline">Shop</Link> new arrivals
               </p>
@@ -93,7 +89,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
             // Cart with items
             <>
               <div className="flex-1 overflow-y-auto px-5 py-4">
-                {/* Quick checkout button for easy access */}
                           
                 <div className="space-y-4">
                   {items.map((item) => (
@@ -153,7 +148,6 @@ export default function CartDrawer({ open, onClose }: { open: boolean; onClose: 
                   <span>Subtotal</span>
                   <span>{formatPrice(subtotal)}</span>
                 </div>
-                <Button href="/checkout" variant="white" className="w-full justify-center py-3 text-base font-medium">Proceed to Checkout</Button>
               </div>
             </>
           )}

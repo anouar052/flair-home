@@ -231,8 +231,6 @@ const products: ProductDetails[] = [
 		],
 		relatedProducts: [
 			{ id: "modular-sofa", title: "Modular Sofa", price: "€ 1,490 EUR", img: "https://images.unsplash.com/photo-1753791913941-efa7de4e1b5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwc29mYSUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzU1NzE1MjE1fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/modular-sofa" },
-			{ id: "accent-chair", title: "Accent Chair", price: "€ 420 EUR", img: "https://images.unsplash.com/photo-1631510390389-c1e4fb20ff31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwc29mYSUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzU1NzE1MjE1fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/accent-chair" },
-			{ id: "floor-lamp", title: "Modern Floor Lamp", price: "€ 280 EUR", img: "https://images.unsplash.com/photo-1732552232770-1a116f777c93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/floor-lamp" },
 		],
 	},
 	{
@@ -274,8 +272,6 @@ const products: ProductDetails[] = [
 		],
 		relatedProducts: [
       { id: "modern-coffee-table", title: "Modern Coffee Table", price: "€ 299 EUR", img: "https://images.unsplash.com/photo-1752061462018-6b3cef2330db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/modern-coffee-table" },
-      { id: "floor-lamp", title: "Floor Lamp", price: "€ 149 EUR", img: "https://images.unsplash.com/photo-1732552232770-1a116f777c93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/floor-lamp" },
-      { id: "area-rug", title: "Area Rug", price: "€ 199 EUR", img: "https://images.unsplash.com/photo-1631510390389-c1e4fb20ff31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwc29mYSUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzU1NzE1MjE1fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/area-rug" },
 		],
 	},
 	{
@@ -316,9 +312,6 @@ const products: ProductDetails[] = [
       { name: "Size", options: ["6-Seater", "8-Seater"], selected: "6-Seater" },
     ],
     relatedProducts: [
-      { id: "dining-chairs", title: "Dining Chairs", price: "€ 150 EUR each", img: "https://images.unsplash.com/photo-1595541465802-ceccad3c168e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxzY2FuZGluYXZpYW4lMjBkaW5pbmclMjB0YWJsZSUyMG9hayUyMHdvb2R8ZW58MHx8fHwxNzU1NzE1MjE3fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/dining-chairs" },
-      { id: "tableware-set", title: "Tableware Set", price: "€ 99 EUR", img: "https://images.unsplash.com/photo-1601063936640-a0e4e4ed081c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwzfHxzY2FuZGluYXZpYW4lMjBkaW5pbmclMjB0YWJsZSUyMG9hayUyMHdvb2R8ZW58MHx8fHwxNzU1NzE1MjE3fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/tableware-set" },
-      { id: "sideboard", title: "Sideboard", price: "€ 499 EUR", img: "https://images.unsplash.com/photo-1617262869356-46646422e3b2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwyfHxzY2FuZGluYXZpYW4lMjBkaW5pbmclMjB0YWJsZSUyMG9hayUyMHdvb2R8ZW58MHx8fHwxNzU1NzE1MjE3fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/sideboard" },
     ],
   },
   {
@@ -360,8 +353,6 @@ const products: ProductDetails[] = [
 		],
 		relatedProducts: [
       { id: "modern-coffee-table", title: "Modern Coffee Table", price: "€ 520 EUR", img: "https://images.unsplash.com/photo-1752061462018-6b3cef2330db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/modern-coffee-table" },
-      { id: "accent-chair", title: "Accent Chair", price: "€ 420 EUR", img: "https://images.unsplash.com/photo-1631510390389-c1e4fb20ff31?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwzfHxtaW5pbWFsaXN0JTIwc29mYSUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzU1NzE1MjE1fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/accent-chair" },
-      { id: "floor-lamp", title: "Modern Floor Lamp", price: "€ 280 EUR", img: "https://images.unsplash.com/photo-1732552232770-1a116f777c93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/floor-lamp" },
 		],
 	},
 	{
@@ -408,7 +399,6 @@ const products: ProductDetails[] = [
 		relatedProducts: [
 			{ id: "memory-mattress", title: "Memory Foam Mattress", price: "€ 990 EUR", img: "https://images.unsplash.com/photo-1655450075012-c0393e3cc1ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxwbGF0Zm9ybSUyMGJlZCUyMGZyYW1lJTIwbW9kZXJuJTIwYmVkcm9vbXxlbnwwfHx8fDE3NTU3MTUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/memory-mattress" },
 			{ id: "platform-bed", title: "Platform Bed Frame", price: "€ 780 EUR", img: "https://images.unsplash.com/photo-1655450075012-c0393e3cc1ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxwbGF0Zm9ybSUyMGJlZCUyMGZyYW1lJTIwbW9kZXJuJTIwYmVkcm9vbXxlbnwwfHx8fDE3NTU3MTUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/platform-bed" },
-			{ id: "floor-lamp", title: "Modern Floor Lamp", price: "€ 280 EUR", img: "https://images.unsplash.com/photo-1732552232770-1a116f777c93?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHw0fHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/floor-lamp" },
 		],
 	},
 	{
@@ -503,7 +493,7 @@ const products: ProductDetails[] = [
 		relatedProducts: [
 			{ id: "platform-bed", title: "Platform Bed Frame", price: "€ 780 EUR", img: "https://images.unsplash.com/photo-1655450075012-c0393e3cc1ce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxwbGF0Zm9ybSUyMGJlZCUyMGZyYW1lJTIwbW9kZXJuJTIwYmVkcm9vbXxlbnwwfHx8fDE3NTU3MTUyMzB8MA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/platform-bed" },
 			{ id: "side-table", title: "Bedside Table", price: "€ 340 EUR", img: "https://images.unsplash.com/photo-1649194271420-b2ff52418a62?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxiZWRzaWRlJTIwdGFibGUlMjBuaWdodHN0YW5kJTIwbW9kZXJufGVufDB8fHx8MTc1NTcxNTIyNnww&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/side-table" },
-			{ id: "full-mirror", title: "Full Length Mirror", price: "€ 320 EUR", img: "https://images.unsplash.com/photo-1752061462018-6b3cef2330db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/full-mirror" },
+			{ id: "full-length-mirror", title: "Full Length Mirror", price: "€ 320 EUR", img: "https://images.unsplash.com/photo-1752061462018-6b3cef2330db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/full-length-mirror" },
 		],
 	},
 	{
@@ -594,7 +584,6 @@ const products: ProductDetails[] = [
 		],
 		relatedProducts: [
 			{ id: "modern-coffee-table", title: "Modern Coffee Table", price: "€ 520 EUR", img: "https://images.unsplash.com/photo-1752061462018-6b3cef2330db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/modern-coffee-table" },
-			{ id: "minimalist-bookshelf", title: "Minimalist Bookshelf", price: "€ 450 EUR", img: "https://images.unsplash.com/photo-1715067865426-8e0293c994d4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwYm9va3NoZWxmJTIwb2FrJTIwd29vZCUyMG1vZGVybnxlbnwwfHx8fDE3NTU3MTUyMjB8MA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/minimalist-bookshelf" },
 			{ id: "pendant-light", title: "Pendant Light", price: "€ 280 EUR", img: "https://images.unsplash.com/photo-1745272749509-5d212d97cbd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxwZW5kYW50JTIwbGlnaHQlMjBtb2Rlcm4lMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc1NTcxNjEzNXww&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/pendant-light" },
 		],
 	},
@@ -640,8 +629,6 @@ const products: ProductDetails[] = [
 		],
 		relatedProducts: [
 			{ id: "modern-desk-chair", title: "Modern Desk Chair", price: "€ 580 EUR", img: "https://images.unsplash.com/photo-1750306957077-b74e45fe1819?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkZXNrJTIwY2hhaXIlMjBlcmdvbm9taWMlMjBvZmZpY2V8ZW58MHx8fHwxNzU1NzE2MTMwfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/modern-desk-chair" },
-			{ id: "scandinavian-dining-table", title: "Scandinavian Dining Table", price: "€ 1,200 EUR", img: "https://images.unsplash.com/photo-1595541465802-ceccad3c168e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxzY2FuZGluYXZpYW4lMjBkaW5pbmclMjB0YWJsZSUyMG9hayUyMHdvb2R8ZW58MHx8fHwxNzU1NzE1MjE3fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/scandinavian-dining-table" },
-			{ id: "minimalist-sofa", title: "Minimalist Sofa", price: "€ 899 EUR", img: "https://images.unsplash.com/photo-1753791913941-efa7de4e1b5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwc29mYSUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzU1NzE1MjE1fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/minimalist-sofa" },
 		],
 	},
 	{
@@ -685,7 +672,6 @@ const products: ProductDetails[] = [
 			{ name: "Wood Finish", options: ["Natural Oak", "Walnut", "White Oak"], selected: "Natural Oak" },
 		],
 		relatedProducts: [
-			{ id: "minimalist-sofa", title: "Minimalist Sofa", price: "€ 899 EUR", img: "https://images.unsplash.com/photo-1753791913941-efa7de4e1b5c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtaW5pbWFsaXN0JTIwc29mYSUyMG1vZGVybiUyMGxpdmluZyUyMHJvb218ZW58MHx8fHwxNzU1NzE1MjE1fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/minimalist-sofa" },
 			{ id: "modern-coffee-table", title: "Modern Coffee Table", price: "€ 520 EUR", img: "https://images.unsplash.com/photo-1752061462018-6b3cef2330db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBjb2ZmZWUlMjB0YWJsZSUyMG1pbmltYWxpc3R8ZW58MHx8fHwxNzU1NzE1MjExfDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/modern-coffee-table" },
 			{ id: "pendant-light", title: "Pendant Light", price: "€ 280 EUR", img: "https://images.unsplash.com/photo-1745272749509-5d212d97cbd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxwZW5kYW50JTIwbGlnaHQlMjBtb2Rlcm4lMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc1NTcxNjEzNXww&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/pendant-light" },
 		],
@@ -731,7 +717,6 @@ const products: ProductDetails[] = [
 			{ name: "Wood Finish", options: ["Natural Oak", "Walnut", "White Oak"], selected: "Natural Oak" },
 		],
 		relatedProducts: [
-			{ id: "scandinavian-dining-table", title: "Scandinavian Dining Table", price: "€ 1,200 EUR", img: "https://images.unsplash.com/photo-1595541465802-ceccad3c168e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxzY2FuZGluYXZpYW4lMjBkaW5pbmclMjB0YWJsZSUyMG9hayUyMHdvb2R8ZW58MHx8fHwxNzU1NzE1MjE3fDA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/scandinavian-dining-table" },
 			{ id: "scandinavian-armchair", title: "Scandinavian Armchair", price: "€ 650 EUR", img: "https://images.unsplash.com/photo-1650304998598-a1cf68f07fdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxzY2FuZGluYXZpYW4lMjBhcm1jaGFpciUyMG1vZGVybnxlbnwwfHx8fDE3NTU3MTYyMjZ8MA&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/scandinavian-armchair" },
 			{ id: "pendant-light", title: "Pendant Light", price: "€ 280 EUR", img: "https://images.unsplash.com/photo-1745272749509-5d212d97cbd4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3OTA1OTd8MHwxfHNlYXJjaHwxfHxwZW5kYW50JTIwbGlnaHQlMjBtb2Rlcm4lMjBtaW5pbWFsaXN0fGVufDB8fHx8MTc1NTcxNjEzNXww&ixlib=rb-4.1.0&q=80&w=1080", href: "/product/pendant-light" },
 		],

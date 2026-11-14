@@ -28,7 +28,7 @@ export default function CatalogPage() {
   const { addToCart } = useCart();
 
   // Theme-aware styling for buttons
-  const preferLight = !isDark && (typeof window !== 'undefined' && window.location.pathname !== '/' && window.location.pathname !== '/en');
+  const preferLight = !isDark;
 
   const idToCategory: Record<string, string> = {
     "modular-sofa": "Sofas",

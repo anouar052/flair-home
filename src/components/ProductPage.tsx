@@ -76,11 +76,6 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
     setTimeout(() => setShowAddedMessage(false), 2000);
   };
 
-  const handleBuyNow = () => {
-    // Buy now logic here
-    console.log("Buying now:", { product, selectedVariants, quantity });
-  };
-
   const isDiscounted = product.originalPrice && product.originalPrice !== product.price;
 
   return (
@@ -324,7 +319,7 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
 
             {/* Action Buttons */}
             <Reveal delay={300}>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 gap-4">
                 <Button
                   as="button"
                   onClick={handleAddToCart}
@@ -335,19 +330,6 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
                   )}
                 >
                   Add to Cart
-                </Button>
-                <Button
-                  as="button"
-                  onClick={handleBuyNow}
-                  variant="ghost"
-                  className={clsx(
-                    "w-full py-4 text-base font-medium flex items-center justify-center",
-                    isDark 
-                      ? "border border-white/20 hover:bg-white/10 text-white" 
-                      : "border border-black/20 hover:bg-black/10 text-black"
-                  )}
-                >
-                  Buy Now
                 </Button>
               </div>
             </Reveal>
@@ -536,6 +518,7 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
         </div>
 
            {/* Related Products */}
+        {product.relatedProducts.length > 0 && (
         <div className="mt-20">
           <Reveal>
             <h3 className="text-2xl font-light mb-8">You might also like</h3>
@@ -560,6 +543,7 @@ export default function ProductPage({ product }: { product: ProductDetails }) {
             ))}
           </div>
         </div>
+        )}
 
          {/* FAQ */}
     <div className="mt-20">
